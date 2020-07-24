@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\utils">
+      <UniqueIdentifier>{d511e91c-bf1e-477a-ba47-b08f90031a08}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="covariance.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="optimizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="partition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="processing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="superPixel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="covariance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="global_variables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="optimizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="processing.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="superPixel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\mat2.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\mat3.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\mat4.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\mixmops.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\mixmsg.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\MxMat3-jacobi.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\MxMat4-jacobi.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\MxMatrix.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\MxQMetric.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\MxQMetric3.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\metric\time.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="include\qslim\heap\MxHeap.cxx">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
