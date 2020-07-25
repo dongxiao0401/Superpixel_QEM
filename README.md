@@ -8,9 +8,9 @@ The "merging-swapping" optimization code is built on the basis of source code re
 Set up the corresponding OpenCV include and lib paths for the VS project. 
 
 Parameters:
-* in_folder: the folder that contains input images
-* out_folder: the folder that stores the superpixel results, including segmentation images and txt files.
-* nSuperpixel: the number of superpixels
+* in_folder: the folder that contains input images;
+* out_folder: the folder that stores the superpixel results, including segmentation images and txt files;
+* nSuperpixel: the number of superpixels;
 * location_ratio: the parameter that balances the relative importance between color homogeneity and spatial compactness.
 
 Cite:
