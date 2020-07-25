@@ -80,8 +80,10 @@ int main(int argc, char *argv[])
 
 	in_folder = string(".\\..\\test");
 	out_folder = string(".\\..\\test_results");
-	nSuperpixel = 300;//number of superpixels
-	location_ratio = 0.5;//parameter to balance the relative importance between color energy and position energy
+	//number of superpixels
+	nSuperpixel = 300;
+	//parameter to balance the relative importance between color energy and position energy
+	location_ratio = 0.5;
 
 
 	sp_folder = out_folder + "\\" + "superpixels";//save superpixel 
