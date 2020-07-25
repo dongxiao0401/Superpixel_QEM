@@ -5,10 +5,10 @@
 #include <vector>
 using namespace std;
 using namespace Eigen;
-//double CovDet::ratio = 1e16
-double CovDet::ratio = 0.1;
+//double Covariance::ratio = 1e16
+double Covariance::ratio = 0.1;
 
-CovDet::CovDet()
+Covariance::Covariance()
 {
 	cov1.setZero();
 	cov2.setZero();
@@ -17,7 +17,7 @@ CovDet::CovDet()
 	centroid2.setZero();
 }
 
-CovDet::CovDet(Vector5d v, double a)
+Covariance::Covariance(Vector5d v, double a)
 {
 	area = a;
 	centroid1 = Vector2d(v(0), v(1));
@@ -26,7 +26,7 @@ CovDet::CovDet(Vector5d v, double a)
 	cov2.setZero();
 }
 
-double CovDet::energy()
+double Covariance::energy()
 {
 	if(area < 8.0)
 		return (cov1.trace()+cov2.trace());
@@ -34,12 +34,12 @@ double CovDet::energy()
 	//return (ratio * cov1.trace()+ (cov2.determinant() > 0 ? pow(cov2.determinant(), 1/3.0) : 0)  );
 }
 
-double CovDet::energy1()
+double Covariance::energy1()
 {
 	return cov1.trace();
 }
 
-double CovDet::energy2()
+double Covariance::energy2()
 {
 	/*if(area < 8.0)
 		return cov2.trace();

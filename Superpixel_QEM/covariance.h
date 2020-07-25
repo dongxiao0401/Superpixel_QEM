@@ -1,11 +1,11 @@
-#ifndef COV_DETERMINANT_H
-#define COV_DETERMINANT_H
+#ifndef COVARIANCE_H
+#define COVARIANCE_H
 #include "Eigen/Dense"
 #include "Eigen/Eigenvalues"
 using namespace Eigen;
 typedef Matrix<double, 5, 1> Vector5d;
 
-class CovDet
+class Covariance
 {
 public:
 	Matrix2d cov1;
@@ -18,20 +18,20 @@ public:
 public:
 	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 public:
-	CovDet();
-	CovDet(Vector5d v, double a);
-	CovDet& operator=(const CovDet& Q)
+	Covariance();
+	Covariance(Vector5d v, double a);
+	Covariance& operator=(const Covariance& Q)
 	{ 
 		cov1 = Q.cov1; cov2 = Q.cov2;
 		area = Q.area; 
 		centroid1 = Q.centroid1; centroid2 = Q.centroid2;
 		return *this; 
 	}
-	CovDet& operator+=(const CovDet& Q)
+	Covariance& operator+=(const Covariance& Q)
 	{ 
 		//if (Q.area < 2.0)
 		//	return *this;
-		CovDet Q_old = *this;
+		Covariance Q_old = *this;
 		area = Q_old.area + Q.area;
 		centroid1 = (Q_old.area * Q_old.centroid1 + Q.area * Q.centroid1)/(area);
 		centroid2 = (Q_old.area * Q_old.centroid2 + Q.area * Q.centroid2)/(area);
@@ -46,11 +46,11 @@ public:
 		return *this; 
 	}
 
-	CovDet& operator-=(const CovDet& Q)
+	Covariance& operator-=(const Covariance& Q)
 	{ 
 		//if (Q.area < 2.0)
 		//	return *this;
-		CovDet Q_old = *this;
+		Covariance Q_old = *this;
 		area = Q_old.area - Q.area;
 		centroid1 = (Q_old.area * Q_old.centroid1 - Q.area * Q.centroid1)/(area);
 		centroid2 = (Q_old.area * Q_old.centroid2 - Q.area * Q.centroid2)/(area);

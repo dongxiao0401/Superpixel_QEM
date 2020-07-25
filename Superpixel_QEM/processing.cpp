@@ -99,7 +99,7 @@ void PostProcessor::cleanClusters()
 		if (sub_clusters[largest_component_id].size() >= 30)
 		{
 			tess->clusters[cluster_id] = sub_clusters[largest_component_id];
-			CovDet cov = CovDet();
+			Covariance cov = Covariance();
 			for(set<PixelIdx>::iterator f_it = sub_clusters[largest_component_id].begin(); f_it != sub_clusters[largest_component_id].end(); f_it++)
 			{
 				cov += optimizer->init_covariance(*f_it);
@@ -111,7 +111,7 @@ void PostProcessor::cleanClusters()
 		{
 			largest_component_id = -1;
 			tess->clusters[cluster_id].clear();
-			optimizer->covariance(cluster_id) = CovDet();
+			optimizer->covariance(cluster_id) = Covariance();
 		}
 
 		
@@ -122,7 +122,7 @@ void PostProcessor::cleanClusters()
 		{
 			if (component_id != largest_component_id)
 			{
-				CovDet cov_i = CovDet();
+				Covariance cov_i = Covariance();
 				for(set<PixelIdx>::iterator f_it = sub_clusters[component_id].begin(); f_it != sub_clusters[component_id].end(); f_it++)
 				{
 					cov_i += optimizer->init_covariance(*f_it);			
@@ -131,8 +131,8 @@ void PostProcessor::cleanClusters()
 				int cluster_closest = *(sub_cluster_neighbors[component_id].begin());
 				double energy_increased_smallest = 1e20;
 				//merge with its neighbors
-				CovDet cov_j;
-				CovDet C;
+				Covariance cov_j;
+				Covariance C;
 				for (set<int>::iterator cluster_it = sub_cluster_neighbors[component_id].begin(); cluster_it != sub_cluster_neighbors[component_id].end(); cluster_it++)
 				{
 					cov_j=optimizer->covariance(*cluster_it);

@@ -63,7 +63,6 @@ void generate_superpixels_rec(string dir, string sub_path)
 					}
 				}
 				image_index++;
-				/*if (image_index>389)*/
 				generate_superpixels_rec(new_dir,  new_sub_path);			
 			} while (FindNextFile(hFind, &data));
 			FindClose(hFind);
@@ -81,12 +80,12 @@ int main(int argc, char *argv[])
 
 	in_folder = string(".\\..\\test");
 	out_folder = string(".\\..\\test_results");
-	nSuperpixel = 300;
-	location_ratio = 0.5;
+	nSuperpixel = 300;//number of superpixels
+	location_ratio = 0.5;//parameter to balance the relative importance between color energy and position energy
 
 
-	sp_folder = out_folder + "\\" + "superpixels";
-	par_folder = out_folder + "\\" + "partition_results";
+	sp_folder = out_folder + "\\" + "superpixels";//save superpixel 
+	par_folder = out_folder + "\\" + "partition_results";//save txt results
 
 	string command = "md " + sp_folder;
 	if (_access(sp_folder.c_str(), 0) == -1)

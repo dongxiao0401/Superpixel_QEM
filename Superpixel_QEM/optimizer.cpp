@@ -36,8 +36,8 @@ void Optimizer::allocate_space()
 {
 	nPixel = input_image.height * input_image.width;
 	nClusters = gridw * gridh;
-	__cov = vector<CovDet>(nClusters, CovDet());
-	initial_cov = vector<CovDet>(nPixel, CovDet());
+	__cov = vector<Covariance>(nClusters, Covariance());
+	initial_cov = vector<Covariance>(nPixel, Covariance());
 
 	cluster_neighbor_links = vector<vector<cluster_pair>>(nClusters); 
 	cluster_boundary_pixels = vector<set<PixelIdx>>(nClusters);
@@ -74,7 +74,7 @@ void Optimizer::init_covariance()
 		{
 			Vector5d coor;
 			coor << j, i, ptr[3*j], ptr[3*j+1], ptr[3*j+2];
-			CovDet cov(coor, 1.0);
+			Covariance cov(coor, 1.0);
 			init_covariance(pixelID(j, i)) = cov;
 
 			int cluster_id = i/dy * gridw + j/dx;
@@ -146,8 +146,8 @@ void Optimizer::compute_energy(Cluster_Pair *info)
 {
 	PixelIdx i=info->p1, j=info->p2;
 
-	CovDet &Ci=covariance(i), &Cj=covariance(j);
-	CovDet C=Ci;  C+=Cj;
+	Covariance &Ci=covariance(i), &Cj=covariance(j);
+	Covariance C=Ci;  C+=Cj;
 
 	double err = C.energy() - Ci.energy() - Cj.energy();
 	info->heap_key(-err);
@@ -299,14 +299,14 @@ void Optimizer::update_energy_ratio()
 	vector<double> cluster_energy_color(nClusters, 0);
 	for (int i=0; i<nClusters; i++)
 	{
-		CovDet &Cj=covariance(valid_mapping[i]);
+		Covariance &Cj=covariance(valid_mapping[i]);
 		cluster_energy_location[i] = Cj.energy1();
 		cluster_energy_color[i] = Cj.energy2();
 	}
 	double energy_color = std::accumulate(cluster_energy_color.begin(), cluster_energy_color.end(), 0.0);
 	double energy_location = std::accumulate(cluster_energy_location.begin(), cluster_energy_location.end(), 0.0);
-	CovDet::ratio = location_ratio * energy_color/ energy_location;
-	//cout << "location energy: " << energy_location << " color energy " << energy_color << " ratio " << CovDet::ratio << endl;
+	Covariance::ratio = location_ratio * energy_color/ energy_location;
+	//cout << "location energy: " << energy_location << " color energy " << energy_color << " ratio " << Covariance::ratio << endl;
 }
 
 void Optimizer::init_pixel_swap()
@@ -369,7 +369,7 @@ void Optimizer::collect_cluster_neighbor()
 
 void Optimizer::update_cluster_information(ClusterIdx i)
 {
-	CovDet &Cj=covariance(valid_mapping[i]);
+	Covariance &Cj=covariance(valid_mapping[i]);
 	cluster_energy[i] = Cj.energy();
 }
 
@@ -407,9 +407,9 @@ void Optimizer::collect_cluster_swaps(ClusterIdx i)
 
 double Optimizer::calc_energy_delta(ClusterIdx from, ClusterIdx to, PixelIdx face_id, Pixel_swap *info)
 {
-	const CovDet &Ci=covariance(from), &Cj=covariance(to), &C_init = init_covariance(face_id);
-	CovDet C_from = Ci;
-	CovDet C_to = Cj;
+	const Covariance &Ci=covariance(from), &Cj=covariance(to), &C_init = init_covariance(face_id);
+	Covariance C_from = Ci;
+	Covariance C_to = Cj;
 	double energy_before = cluster_energy[find_cluster_id(from)] + cluster_energy[find_cluster_id(to)];
 	C_from -= C_init;
 	C_to += C_init;

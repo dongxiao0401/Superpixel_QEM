@@ -41,8 +41,8 @@ public:
 	int gridw;
 	int gridh;
 	int nPixel;
-	vector<CovDet> __cov;
-	vector<CovDet> initial_cov;
+	vector<Covariance> __cov;
+	vector<Covariance> initial_cov;
 	vector<vector<Cluster_Pair*>> contractions; 
 
 	vector<vector<cluster_pair>> cluster_neighbor_links;
@@ -94,10 +94,10 @@ public:
 	void apply_swap(Pixel_swap* info, set<ClusterIdx>& update_domain);
 public:
 	uint cov_count() const { return __cov.size(); }
-	CovDet&       covariance(uint i)       { return __cov[i]; }
-	const CovDet& covariance(uint i) const { return __cov[i]; }
-	CovDet&       init_covariance(uint i)       { return initial_cov[i]; }
-	const CovDet& init_covariance(uint i) const { return initial_cov[i]; }
+	Covariance&       covariance(uint i)       { return __cov[i]; }
+	const Covariance& covariance(uint i) const { return __cov[i]; }
+	Covariance&       init_covariance(uint i)       { return initial_cov[i]; }
+	const Covariance& init_covariance(uint i) const { return initial_cov[i]; }
 };
 
 #endif

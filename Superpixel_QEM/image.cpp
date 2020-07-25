@@ -14,8 +14,6 @@ Image::Image()
 
 Image::~Image()
 {
-	/*cvReleaseImage(&img);
-	cvReleaseImage(&labimg);*/
 }
 
 //void Image::resizeImage()

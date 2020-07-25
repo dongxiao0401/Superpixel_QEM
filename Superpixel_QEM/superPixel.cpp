@@ -32,7 +32,11 @@ void SuperPixel::init()
 		delete optimizer;
 
 	int nPixel = input_image.height * input_image.width;
-	int target_blocks = contracted_num * 25;//nPixel
+	/*
+	In paper, we treat each pixel as an initial superpixel and do the "merging" procedure. To speed up the processing, we initialize
+	the superpixel with a block of pixels in advance.
+	*/
+	int target_blocks = contracted_num * 25;
 	float d_theory = sqrt((float)nPixel/target_blocks);
 	int dx = d_theory > 1 ? d_theory : 1;
 	int dy = d_theory > 1 ? d_theory : 1;
