@@ -1,4 +1,5 @@
 # Superpixel
+![Example 1](test_results/merge_swapping.png)
 This program is the implementation of the paper [Superpixel Generation by Agglomerative Clustering with Quadratic Error Minimization](https://onlinelibrary.wiley.com/doi/epdf/10.1111/cgf.13538).
 
 Acknowledgement:
