@@ -27,3 +27,14 @@ If you find our code or paper useful, please consider citing
 	  year={2019},
 	  organization={Wiley Online Library}
 	}
+	
+	@inproceedings{cai2016anisotropic,
+	  title={Anisotropic superpixel generation based on mahalanobis distance},
+	  author={Cai, Yiqi and Guo, Xiaohu},
+	  booktitle={Computer Graphics Forum},
+	  volume={35},
+	  number={7},
+	  pages={199--207},
+	  year={2016},
+	  organization={Wiley Online Library}
+}
