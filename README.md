@@ -15,11 +15,11 @@ Parameters:
 * location_ratio: the parameter that balances the relative importance between color homogeneity and spatial compactness.
 
 Dataset:
+
 You can download [the Berkeley Segmentation Dataset BSDS500](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/) from here.
 
 
 Cite:
-
 If you find our code or paper useful, please consider citing
 
 	@inproceedings{dong2019superpixel,
