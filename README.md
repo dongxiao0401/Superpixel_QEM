@@ -19,6 +19,7 @@ You can download [the Berkeley Segmentation Dataset BSDS500](https://www2.eecs.b
 
 
 Cite:
+
 If you find our code or paper useful, please consider citing
 
 	@inproceedings{dong2019superpixel,
