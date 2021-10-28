@@ -27,6 +27,7 @@ You can download [the Berkeley Segmentation Dataset BSDS500](https://www2.eecs.b
 
 
 Acknowledgement:
+
 The "merging-swapping" optimization code is built on the basis of source code release by Dr. Michael Garland (http://mgarland.org/papers.html)
 
 ## BibTex:
