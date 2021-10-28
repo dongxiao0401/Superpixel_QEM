@@ -1,9 +1,15 @@
 # Superpixel
 ![Example 1](test_results/merge_swapping.png)
-This program is the implementation of the paper [Superpixel Generation by Agglomerative Clustering with Quadratic Error Minimization](https://onlinelibrary.wiley.com/doi/epdf/10.1111/cgf.13538).
+This program is the implementation of the paper
+> **Superpixel Generation by Agglomerative Clustering with Quadratic Error Minimization**
+>
+> Xiao Dong, 
+> Zhonggui Chen, 
+> Junfeng Yao,
+> Xiaohu Guo
+>
+> Computer Graphics Forum, 2019
 
-Acknowledgement:
-The "merging-swapping" optimization code is built on the basis of source code release by Dr. Michael Garland (http://mgarland.org/papers.html)
 
 ## Configuration:
 Set up the corresponding OpenCV include and lib paths for the VS project. 
@@ -18,6 +24,9 @@ Dataset:
 
 You can download [the Berkeley Segmentation Dataset BSDS500](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/) from here.
 
+
+Acknowledgement:
+The "merging-swapping" optimization code is built on the basis of source code release by Dr. Michael Garland (http://mgarland.org/papers.html)
 
 ## BibTex:
 If you find our code or paper useful, please consider citing
